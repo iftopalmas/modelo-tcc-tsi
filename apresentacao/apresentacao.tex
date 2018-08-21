@@ -1,0 +1,85 @@
+%Modelo de apresentação de pré-projeto e TCC para o curso de Tecnologia em Sistemas para Internet
+%do Instituto Federal de Educação, Ciência e Tecnologia do Tocantins.
+%Necessário o pacote latex-beamer instalado.
+%Em distribuições Linux Debian use: sudo apt-get install latex-beamer
+%@author Prof. Manoel Campos da Silva Filho - http://manoelcampos.com
+%@version 1.0
+
+\documentclass[slidestop,compress,mathserif]{beamer}
+\usepackage[brazil]{babel}
+
+\usepackage{verbatim} % http://devdaily.com/blog/post/latex/multi-line-comments-in-latex-begin-123-comment-125-verbatim
+\usepackage[utf8]{inputenc}
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png,.gif, .eps}
+\usepackage{hyperref}
+\usepackage{url}
+
+\usetheme{IFTO}
+
+\title{Título do Projeto}
+\author{Nome do Aluno\inst{1} \and \\Orientador: Nome do Orientador\inst{1}}
+
+\institute{\inst{1}Instituto Federal de Educação, Ciência e Tecnologia do Tocantins (IFTO/Palmas)}
+\logo{\includegraphics[scale=.2]{logo-ifto-completo.png}}
+
+\setbeamertemplate{footline}[frame number]
+
+%apenas se for usar o compilador xetex
+%\usepackage{fontspec}
+%\usepackage{xltxtra,xunicode}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont[Mapping=tex-text]{Times New Roman}
+%\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+%\setmonofont[Scale=MatchLowercase]{Andale Mono}
+
+
+\usepackage{graphicx}
+\usepackage{caption}
+
+\usepackage{listingsutf8} %listings
+
+\lstset{
+  extendedchars=true,
+  numbers=left,
+  stepnumber=1,
+  firstnumber=1,
+  numberstyle=\tiny,
+  breaklines=true,
+  frame=TB,
+  basicstyle=\footnotesize,
+  stringstyle=\ttfamily,
+  showstringspaces=false,
+  %backgroundcolor=\color{gray}
+}
+
+\renewcommand{\lstlistingname}{Código Fonte}
+\renewcommand{\lstlistlistingname}{Lista de Códigos Fonte}
+
+\begin{document}
+
+\frame{
+  \titlepage
+} 
+
+\begin{frame}[allowframebreaks] %Permite que o roteiro seja quebrado em vários slides
+  \frametitle{Roteiro}
+  \begin{center}\includegraphics[scale=0.2]{imgs/java.png}\end{center}
+  %\setcounter{tocdepth}{1} %Exibe apenas os elementos de primeiro nível no sumário
+  \tableofcontents
+\end{frame}
+
+%\frame{\frametitle{Roteiro} %Roteiro sem quebra de página
+%  \begin{center}\includegraphics[scale=0.2]{imgs/java.png}\end{center}
+%  %\setcounter{tocdepth}{1} %Exibe apenas os elementos de primeiro nível no sumário
+%  \tableofcontents
+%}
+
+
+\input{1-plataforma}
+\input{2-linguagem-java}
+\input{3-overview-java}
+
+
+%\lstinputlisting[language=TeX, label=exemplo1, caption={``Olá mundo em LaTeX''}]{ola_mundo.tex}
+
+\end{document}
